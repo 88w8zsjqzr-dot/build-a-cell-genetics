@@ -1,0 +1,722 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px '.AppleSystemUIFontMonospaced'; color: #88b966}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px '.AppleSystemUIFontMonospaced'; color: #9ba2b1}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px '.AppleSystemUIFontMonospaced'; color: #d65562}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px '.AppleSystemUIFontMonospaced'; color: #c58853}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px '.AppleSystemUIFontMonospaced'; color: #9ba2b1; min-height: 18.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px '.AppleSystemUIFontMonospaced'; color: #4a505d}
+    span.s1 {color: #b85dd5}
+    span.s2 {color: #d65562}
+    span.s3 {color: #c58853}
+    span.s4 {color: #88b966}
+    span.s5 {color: #9ba2b1}
+    span.s6 {color: #48a8b5}
+    span.s7 {color: #4a505d}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype <span class="s1">html</span>&gt;</p>
+<p class="p2">&lt;<span class="s2">html</span> <span class="s3">lang</span>=<span class="s4">"en"</span>&gt;</p>
+<p class="p3"><span class="s5">&lt;</span>head<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;<span class="s2">meta</span> <span class="s3">charset</span>=<span class="s4">"utf-8"</span> /&gt;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">  </span>&lt;</span><span class="s2">meta</span><span class="s5"> </span><span class="s3">name</span><span class="s5">=</span>"viewport"<span class="s5"> </span><span class="s3">content</span><span class="s5">=</span>"width=device-width,initial-scale=1"<span class="s5"> /&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;<span class="s2">title</span>&gt;Build-a-Cell Genetics Lab&lt;/<span class="s2">title</span>&gt;</p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span>&lt;</span>style<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">:root</span> {</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--bg<span class="s5">: </span>#0b0f14<span class="s5">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--panel<span class="s5">: </span>#111827<span class="s5">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--panel2<span class="s5">: </span>#0f172a<span class="s5">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--text<span class="s5">: </span>#e5e7eb<span class="s5">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--muted<span class="s5">: </span>#9ca3af<span class="s5">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--border<span class="s5">: rgba(</span>255<span class="s5">,</span>255<span class="s5">,</span>255<span class="s5">,</span>0.10<span class="s5">);</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--ok<span class="s5">: </span>#22c55e<span class="s5">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--bad<span class="s5">: </span>#ef4444<span class="s5">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--warn<span class="s5">: </span>#f59e0b<span class="s5">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--chip<span class="s5">: rgba(</span>255<span class="s5">,</span>255<span class="s5">,</span>255<span class="s5">,</span>0.08<span class="s5">);</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--shadow<span class="s5">: </span>0<span class="s5"> </span>10px<span class="s5"> </span>30px<span class="s5"> rgba(</span>0<span class="s5">,</span>0<span class="s5">,</span>0<span class="s5">,</span>0.45<span class="s5">);</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>--radius<span class="s5">: </span>16px<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s3">--font</span>: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, <span class="s4">"Apple Color Emoji"</span>, <span class="s4">"Segoe UI Emoji"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span>* { <span class="s4">box-sizing</span>: border-box; }</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s2">body</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">margin</span>: <span class="s3">0</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-family</span>: var(--font);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: radial-gradient(<span class="s3">1200px</span> <span class="s3">700px</span> at <span class="s3">20%</span> <span class="s3">10%</span>, rgba(<span class="s3">59</span>,<span class="s3">130</span>,<span class="s3">246</span>,<span class="s3">0.15</span>), transparent <span class="s3">55%</span>),</p>
+<p class="p2"><span class="Apple-converted-space">                  </span>radial-gradient(<span class="s3">1200px</span> <span class="s3">700px</span> at <span class="s3">80%</span> <span class="s3">20%</span>, rgba(<span class="s3">34</span>,<span class="s3">197</span>,<span class="s3">94</span>,<span class="s3">0.12</span>), transparent <span class="s3">55%</span>),</p>
+<p class="p2"><span class="Apple-converted-space">                  </span>var(--bg);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--text);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s2">header</span> {</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s4">padding</span><span class="s5">: </span>20px<span class="s5"> </span>18px<span class="s5"> </span>10px<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">max-width</span>: <span class="s3">1200px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">margin</span>: <span class="s3">0</span> auto;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s2">h1</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">margin</span>: <span class="s3">0</span> <span class="s3">0</span> <span class="s3">6px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">22px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>font-weight<span class="s5">: </span><span class="s3">700</span><span class="s5">;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>letter-spacing<span class="s5">: </span><span class="s3">0.2px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.sub</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">margin</span>: <span class="s3">0</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--muted);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">14px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>line-height<span class="s5">: </span><span class="s3">1.35</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.wrap</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">max-width</span>: <span class="s3">1200px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">margin</span>: <span class="s3">0</span> auto;</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s4">padding</span><span class="s5">: </span>14px<span class="s5"> </span>18px<span class="s5"> </span>26px<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">display</span>: grid;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>grid-template-columns<span class="s5">: </span><span class="s3">420px</span><span class="s5"> </span><span class="s3">1</span><span class="s5">fr;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">gap</span>: <span class="s3">14px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">@media</span> (<span class="s4">max-width</span>: <span class="s3">980px</span>) {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s3">.wrap</span><span class="s5"> { </span>grid-template-columns<span class="s5">: </span><span class="s3">1</span><span class="s5">fr; }</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.card</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: linear-gradient(<span class="s3">180deg</span>, rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.06</span>), transparent <span class="s3">55%</span>), var(--panel);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border-radius</span>: var(--radius);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">box-shadow</span>: var(--shadow);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">14px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.card</span> <span class="s2">h2</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">margin</span>: <span class="s3">0</span> <span class="s3">0</span> <span class="s3">10px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">16px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>font-weight<span class="s5">: </span><span class="s3">700</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.rules</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">13px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--muted);</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>line-height<span class="s5">: </span><span class="s3">1.45</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.ruleline<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">margin</span>: <span class="s3">6px</span> <span class="s3">0</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">8px</span> <span class="s3">10px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: var(--chip);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid var(--border);</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">12px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>/* Allele cards */</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.alleleTray<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">display</span>: flex;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">gap</span>: <span class="s3">10px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">flex-wrap</span>: wrap;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.alleleCard<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">user-select</span>: none;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">10px</span> <span class="s3">12px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">14px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.06</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">cursor</span>: grab;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">min-width</span>: <span class="s3">90px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">text-align</span>: center;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>font-weight<span class="s5">: </span><span class="s3">700</span><span class="s5">;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>letter-spacing<span class="s5">: </span><span class="s3">0.2px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.alleleCard:active</span> { <span class="s4">cursor</span>: grabbing; }</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.help</span> {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>margin-top<span class="s5">: </span><span class="s3">8px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--muted);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">12px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>line-height<span class="s5">: </span><span class="s3">1.35</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>/* Workspace */</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.grid</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">display</span>: grid;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>grid-template-columns<span class="s5">: </span><span class="s3">360px</span><span class="s5"> </span><span class="s3">1</span><span class="s5">fr;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">gap</span>: <span class="s3">14px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">align-items</span>: start;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">@media</span> (<span class="s4">max-width</span>: <span class="s3">980px</span>) {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s3">.grid</span><span class="s5"> { </span>grid-template-columns<span class="s5">: </span><span class="s3">1</span><span class="s5">fr; }</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>/* Slots */</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.slotsRow<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">display</span>: grid;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>grid-template-columns<span class="s5">: </span><span class="s3">1</span><span class="s5">fr </span><span class="s3">1</span><span class="s5">fr;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">gap</span>: <span class="s3">10px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.slot</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> dashed rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.25</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">0</span>,<span class="s3">0</span>,<span class="s3">0</span>,<span class="s3">0.18</span>);</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">16px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">12px</span> <span class="s3">12px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>min-height<span class="s5">: </span><span class="s3">64px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">display</span>: flex;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">align-items</span>: center;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">justify-content</span>: space-between;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.slotLabel<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--muted);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">12px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.slotValue<span class="s5"> {</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>font-weight<span class="s5">: </span><span class="s3">800</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">16px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">6px</span> <span class="s3">10px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">12px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.06</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">min-width</span>: <span class="s3">72px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">text-align</span>: center;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.slot.dragover<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">outline</span>: <span class="s3">2px</span> solid rgba(<span class="s3">59</span>,<span class="s3">130</span>,<span class="s3">246</span>,<span class="s3">0.55</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">59</span>,<span class="s3">130</span>,<span class="s3">246</span>,<span class="s3">0.10</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>/* RBC visual */</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.rbcBox<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">14px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: linear-gradient(<span class="s3">180deg</span>, rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.06</span>), transparent <span class="s3">55%</span>), var(--panel2);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border-radius</span>: var(--radius);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">box-shadow</span>: var(--shadow);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.rbcTitle<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">display</span>: flex;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">align-items</span>: baseline;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">justify-content</span>: space-between;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">gap</span>: <span class="s3">10px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>margin-bottom<span class="s5">: </span><span class="s3">8px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.rbcTitle<span class="s5"> </span><span class="s2">h3</span><span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">margin</span>: <span class="s3">0</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">15px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>font-weight<span class="s5">: </span><span class="s3">800</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.mini</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--muted);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">12px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.rbcStage<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">position</span>: relative;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">width</span>: <span class="s3">100%</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">max-width</span>: <span class="s3">520px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">aspect-ratio</span>: <span class="s3">16</span> / <span class="s3">9</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">margin</span>: <span class="s3">10px</span> auto <span class="s3">0</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">18px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid var(--border);</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>background<span class="s5">:</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span>radial-gradient(<span class="s3">120px</span> <span class="s3">90px</span> at <span class="s3">50%</span> <span class="s3">52%</span>, rgba(<span class="s3">0</span>,<span class="s3">0</span>,<span class="s3">0</span>,<span class="s3">0.22</span>), transparent <span class="s3">60%</span>),</p>
+<p class="p2"><span class="Apple-converted-space">        </span>radial-gradient(<span class="s3">180px</span> <span class="s3">140px</span> at <span class="s3">50%</span> <span class="s3">52%</span>, rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.06</span>), transparent <span class="s3">66%</span>),</p>
+<p class="p2"><span class="Apple-converted-space">        </span>rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.03</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">overflow</span>: hidden;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.rbc</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">position</span>: absolute;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">left</span>: <span class="s3">50%</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">top</span>: <span class="s3">52%</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">transform</span>: translate(-<span class="s3">50%</span>, -<span class="s3">50%</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">width</span>: <span class="s3">60%</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>aspect-ratio<span class="s5">: </span><span class="s3">1</span><span class="s5">/</span><span class="s3">1</span><span class="s5">;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">999px</span><span class="s5">;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>background<span class="s5">:</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span>radial-gradient(<span class="s3">140px</span> <span class="s3">140px</span> at <span class="s3">50%</span> <span class="s3">50%</span>, rgba(<span class="s3">0</span>,<span class="s3">0</span>,<span class="s3">0</span>,<span class="s3">0.28</span>), transparent <span class="s3">62%</span>),</p>
+<p class="p2"><span class="Apple-converted-space">        </span>radial-gradient(<span class="s3">220px</span> <span class="s3">220px</span> at <span class="s3">40%</span> <span class="s3">35%</span>, rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.18</span>), transparent <span class="s3">55%</span>),</p>
+<p class="p2"><span class="Apple-converted-space">        </span>linear-gradient(<span class="s3">180deg</span>, rgba(<span class="s3">239</span>,<span class="s3">68</span>,<span class="s3">68</span>,<span class="s3">0.85</span>), rgba(<span class="s3">220</span>,<span class="s3">38</span>,<span class="s3">38</span>,<span class="s3">0.78</span>));</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.12</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">box-shadow</span>: <span class="s3">0</span> <span class="s3">12px</span> <span class="s3">30px</span> rgba(<span class="s3">0</span>,<span class="s3">0</span>,<span class="s3">0</span>,<span class="s3">0.45</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.marker<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">position</span>: absolute;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">width</span>: <span class="s3">14px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">height</span>: <span class="s3">14px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">6px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.18</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">box-shadow</span>: <span class="s3">0</span> <span class="s3">6px</span> <span class="s3">10px</span> rgba(<span class="s3">0</span>,<span class="s3">0</span>,<span class="s3">0</span>,<span class="s3">0.35</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">opacity</span>: <span class="s3">0.95</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.marker.A</span> { <span class="s4">background</span>: rgba(<span class="s3">59</span>,<span class="s3">130</span>,<span class="s3">246</span>,<span class="s3">0.9</span>); }</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.marker.B</span> { <span class="s4">background</span>: rgba(<span class="s3">34</span>,<span class="s3">197</span>,<span class="s3">94</span>,<span class="s3">0.9</span>); }</p>
+<p class="p5"><br></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.legend<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">display</span>: flex;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">gap</span>: <span class="s3">10px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">flex-wrap</span>: wrap;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>margin-top<span class="s5">: </span><span class="s3">10px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">justify-content</span>: center;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.legItem<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">display</span>: inline-flex;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">align-items</span>: center;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">gap</span>: <span class="s3">8px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">6px</span> <span class="s3">10px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">999px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.06</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--muted);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">12px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.dot</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">width</span>: <span class="s3">10px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">height</span>: <span class="s3">10px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">4px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.18</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.dot.A</span> { <span class="s4">background</span>: rgba(<span class="s3">59</span>,<span class="s3">130</span>,<span class="s3">246</span>,<span class="s3">0.9</span>); }</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.dot.B</span> { <span class="s4">background</span>: rgba(<span class="s3">34</span>,<span class="s3">197</span>,<span class="s3">94</span>,<span class="s3">0.9</span>); }</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.dot.none<span class="s5"> { </span><span class="s4">background</span><span class="s5">: rgba(</span>255<span class="s5">,</span>255<span class="s5">,</span>255<span class="s5">,</span>0.12<span class="s5">); }</span></p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>/* Phenotype picker */</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.picker<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">display</span>: grid;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">grid-template-columns</span>: repeat(<span class="s3">4</span>, minmax(<span class="s3">64px</span>, <span class="s3">1</span>fr));</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">gap</span>: <span class="s3">10px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>margin-top<span class="s5">: </span><span class="s3">12px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.pickBtn<span class="s5"> {</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">14px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.06</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--text);</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>font-weight<span class="s5">: </span><span class="s3">800</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">10px</span> <span class="s3">10px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">cursor</span>: pointer;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">transition</span>: transform <span class="s3">0.05s</span> ease;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.pickBtn:hover</span> { <span class="s4">transform</span>: translateY(-<span class="s3">1px</span>); }</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.pickBtn.selected<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">outline</span>: <span class="s3">2px</span> solid rgba(<span class="s3">59</span>,<span class="s3">130</span>,<span class="s3">246</span>,<span class="s3">0.6</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">59</span>,<span class="s3">130</span>,<span class="s3">246</span>,<span class="s3">0.10</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>/* Controls + feedback */</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.controls<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">display</span>: flex;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">gap</span>: <span class="s3">10px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">flex-wrap</span>: wrap;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>margin-top<span class="s5">: </span><span class="s3">12px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.btn</span> {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">14px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.06</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--text);</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>font-weight<span class="s5">: </span><span class="s3">800</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">10px</span> <span class="s3">12px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">cursor</span>: pointer;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.btn.primary<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">34</span>,<span class="s3">197</span>,<span class="s3">94</span>,<span class="s3">0.14</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border-color</span>: rgba(<span class="s3">34</span>,<span class="s3">197</span>,<span class="s3">94</span>,<span class="s3">0.35</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.btn.danger<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">239</span>,<span class="s3">68</span>,<span class="s3">68</span>,<span class="s3">0.12</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border-color</span>: rgba(<span class="s3">239</span>,<span class="s3">68</span>,<span class="s3">68</span>,<span class="s3">0.30</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.feedback<span class="s5"> {</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>margin-top<span class="s5">: </span><span class="s3">12px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">12px</span> <span class="s3">12px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">16px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.04</span>);</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>line-height<span class="s5">: </span><span class="s3">1.45</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">13px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--text);</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>min-height<span class="s5">: </span><span class="s3">52px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s3">.feedback.ok</span> { <span class="s4">border-color</span>: rgba(<span class="s3">34</span>,<span class="s3">197</span>,<span class="s3">94</span>,<span class="s3">0.35</span>); <span class="s4">background</span>: rgba(<span class="s3">34</span>,<span class="s3">197</span>,<span class="s3">94</span>,<span class="s3">0.10</span>); }</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.feedback.bad<span class="s5"> { </span><span class="s4">border-color</span><span class="s5">: rgba(</span>239<span class="s5">,</span>68<span class="s5">,</span>68<span class="s5">,</span>0.35<span class="s5">); </span><span class="s4">background</span><span class="s5">: rgba(</span>239<span class="s5">,</span>68<span class="s5">,</span>68<span class="s5">,</span>0.10<span class="s5">); }</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span>.feedback.warn<span class="s5"> { </span><span class="s4">border-color</span><span class="s5">: rgba(</span>245<span class="s5">,</span>158<span class="s5">,</span>11<span class="s5">,</span>0.35<span class="s5">); </span><span class="s4">background</span><span class="s5">: rgba(</span>245<span class="s5">,</span>158<span class="s5">,</span>11<span class="s5">,</span>0.10<span class="s5">); }</span></p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s2">footer</span> {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">max-width</span>: <span class="s3">1200px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">margin</span>: <span class="s3">0</span> auto;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">0</span> <span class="s3">18px</span> <span class="s3">26px</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--muted);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">font-size</span>: <span class="s3">12px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>line-height<span class="s5">: </span><span class="s3">1.35</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s2">code</span>.inline<span class="s5"> {</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">background</span>: rgba(<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">255</span>,<span class="s3">0.06</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">border</span>: <span class="s3">1px</span> solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">padding</span>: <span class="s3">2px</span> <span class="s3">6px</span>;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>border-radius<span class="s5">: </span><span class="s3">8px</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s4">color</span>: var(--text);</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span>font-weight<span class="s5">: </span><span class="s3">700</span><span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/<span class="s2">style</span>&gt;</p>
+<p class="p3"><span class="s5">&lt;/</span>head<span class="s5">&gt;</span></p>
+<p class="p5"><br></p>
+<p class="p3"><span class="s5">&lt;</span>body<span class="s5">&gt;</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span>&lt;</span>header<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;<span class="s2">h1</span>&gt;Build-a-Cell Genetics Lab&lt;/<span class="s2">h1</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;<span class="s2">p</span> <span class="s3">class</span>=<span class="s4">"sub"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>Mode 1: Drag two alleles, watch the red blood cell surface markers appear, then choose the blood group.</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/<span class="s2">p</span>&gt;</p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span>&lt;/</span>header<span class="s5">&gt;</span></p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"wrap"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;<span class="s2">section</span> <span class="s3">class</span>=<span class="s4">"card"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;<span class="s2">h2</span>&gt;Allele cards&lt;/<span class="s2">h2</span>&gt;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span>&lt;</span><span class="s2">div</span><span class="s5"> </span><span class="s3">class</span><span class="s5">=</span>"alleleTray"<span class="s5"> </span><span class="s3">id</span><span class="s5">=</span>"alleleTray"<span class="s5">&gt;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">        </span>&lt;</span><span class="s2">div</span><span class="s5"> </span>class<span class="s5">=</span><span class="s4">"alleleCard"</span><span class="s5"> </span>draggable<span class="s5">=</span><span class="s4">"true"</span><span class="s5"> </span>data-allele<span class="s5">=</span><span class="s4">"IA"</span><span class="s5">&gt;Iᴬ&lt;/</span><span class="s2">div</span><span class="s5">&gt;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">        </span>&lt;</span><span class="s2">div</span><span class="s5"> </span>class<span class="s5">=</span><span class="s4">"alleleCard"</span><span class="s5"> </span>draggable<span class="s5">=</span><span class="s4">"true"</span><span class="s5"> </span>data-allele<span class="s5">=</span><span class="s4">"IB"</span><span class="s5">&gt;Iᴮ&lt;/</span><span class="s2">div</span><span class="s5">&gt;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">        </span>&lt;</span><span class="s2">div</span><span class="s5"> </span>class<span class="s5">=</span><span class="s4">"alleleCard"</span><span class="s5"> </span>draggable<span class="s5">=</span><span class="s4">"true"</span><span class="s5"> </span>data-allele<span class="s5">=</span><span class="s4">"i"</span><span class="s5">&gt;i&lt;/</span><span class="s2">div</span><span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"help"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>Drag an allele into each slot. You must have two alleles total (one from each parent).</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;<span class="s2">div</span> <span class="s3">style</span>=<span class="s4">"height:12px"</span>&gt;&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;<span class="s2">h2</span>&gt;Rules (Table 1.2 logic)&lt;/<span class="s2">h2</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"rules"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"ruleline"</span>&gt;&lt;<span class="s2">strong</span>&gt;Iᴬ&lt;/<span class="s2">strong</span>&gt; produces &lt;<span class="s2">strong</span>&gt;A markers&lt;/<span class="s2">strong</span>&gt; on red blood cells.&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"ruleline"</span>&gt;&lt;<span class="s2">strong</span>&gt;Iᴮ&lt;/<span class="s2">strong</span>&gt; produces &lt;<span class="s2">strong</span>&gt;B markers&lt;/<span class="s2">strong</span>&gt; on red blood cells.&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"ruleline"</span>&gt;&lt;<span class="s2">strong</span>&gt;i&lt;/<span class="s2">strong</span>&gt; produces &lt;<span class="s2">strong</span>&gt;no A/B markers&lt;/<span class="s2">strong</span>&gt;.&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"ruleline"</span>&gt;&lt;<span class="s2">strong</span>&gt;Iᴬ&lt;/<span class="s2">strong</span>&gt; dominates &lt;<span class="s2">strong</span>&gt;i&lt;/<span class="s2">strong</span>&gt;; &lt;<span class="s2">strong</span>&gt;Iᴮ&lt;/<span class="s2">strong</span>&gt; dominates &lt;<span class="s2">strong</span>&gt;i&lt;/<span class="s2">strong</span>&gt;; &lt;<span class="s2">strong</span>&gt;Iᴬ and Iᴮ are co-dominant&lt;/<span class="s2">strong</span>&gt;.&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/<span class="s2">section</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;<span class="s2">section</span> <span class="s3">class</span>=<span class="s4">"card"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;<span class="s2">h2</span>&gt;Workspace&lt;/<span class="s2">h2</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"grid"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"slotsRow"</span>&gt;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span>&lt;</span><span class="s2">div</span><span class="s5"> </span><span class="s3">class</span><span class="s5">=</span>"slot"<span class="s5"> </span><span class="s3">id</span><span class="s5">=</span>"slot1"<span class="s5"> </span><span class="s3">data-slot</span><span class="s5">=</span>"1"<span class="s5"> </span><span class="s3">aria-label</span><span class="s5">=</span>"Allele slot 1"<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">              </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"slotLabel"</span>&gt;Allele 1&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">              </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"slotValue"</span> <span class="s3">id</span>=<span class="s4">"slot1Val"</span>&gt;___&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span>&lt;</span><span class="s2">div</span><span class="s5"> </span><span class="s3">class</span><span class="s5">=</span>"slot"<span class="s5"> </span><span class="s3">id</span><span class="s5">=</span>"slot2"<span class="s5"> </span><span class="s3">data-slot</span><span class="s5">=</span>"2"<span class="s5"> </span><span class="s3">aria-label</span><span class="s5">=</span>"Allele slot 2"<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">              </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"slotLabel"</span>&gt;Allele 2&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">              </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"slotValue"</span> <span class="s3">id</span>=<span class="s4">"slot2Val"</span>&gt;___&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"controls"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">button</span> <span class="s3">class</span>=<span class="s4">"btn"</span> <span class="s3">id</span>=<span class="s4">"resetBtn"</span> <span class="s3">type</span>=<span class="s4">"button"</span>&gt;Reset alleles&lt;/<span class="s2">button</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">button</span> <span class="s3">class</span>=<span class="s4">"btn primary"</span> <span class="s3">id</span>=<span class="s4">"checkBtn"</span> <span class="s3">type</span>=<span class="s4">"button"</span>&gt;Check answer&lt;/<span class="s2">button</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">button</span> <span class="s3">class</span>=<span class="s4">"btn danger"</span> <span class="s3">id</span>=<span class="s4">"newBtn"</span> <span class="s3">type</span>=<span class="s4">"button"</span>&gt;New round&lt;/<span class="s2">button</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">          </span>&lt;</span><span class="s2">div</span><span class="s5"> </span><span class="s3">class</span><span class="s5">=</span>"feedback warn"<span class="s5"> </span><span class="s3">id</span><span class="s5">=</span>"feedback"<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">            </span>Put two alleles in the slots, then choose the blood group.</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"rbcBox"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"rbcTitle"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">h3</span>&gt;Red blood cell surface markers&lt;/<span class="s2">h3</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"mini"</span>&gt;Markers update from genotype&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">          </span>&lt;</span><span class="s2">div</span><span class="s5"> </span><span class="s3">class</span><span class="s5">=</span>"rbcStage"<span class="s5"> </span><span class="s3">id</span><span class="s5">=</span>"rbcStage"<span class="s5"> </span><span class="s3">aria-label</span><span class="s5">=</span>"Red blood cell visual stage"<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"rbc"</span> <span class="s3">aria-hidden</span>=<span class="s4">"true"</span>&gt;&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">            </span></span>&lt;!-- markers injected by JS --&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"legend"</span> <span class="s3">aria-label</span>=<span class="s4">"Legend"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"legItem"</span>&gt;&lt;<span class="s2">span</span> <span class="s3">class</span>=<span class="s4">"dot A"</span>&gt;&lt;/<span class="s2">span</span>&gt; A marker&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"legItem"</span>&gt;&lt;<span class="s2">span</span> <span class="s3">class</span>=<span class="s4">"dot B"</span>&gt;&lt;/<span class="s2">span</span>&gt; B marker&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"legItem"</span>&gt;&lt;<span class="s2">span</span> <span class="s3">class</span>=<span class="s4">"dot none"</span>&gt;&lt;/<span class="s2">span</span>&gt; none&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;<span class="s2">div</span> <span class="s3">style</span>=<span class="s4">"height:12px"</span>&gt;&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">          </span>&lt;</span><span class="s2">div</span><span class="s5"> </span><span class="s3">class</span><span class="s5">=</span>"mini"<span class="s5"> </span><span class="s3">style</span><span class="s5">=</span>"margin-bottom:6px;"<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">            </span>Choose the phenotype (blood group) for this genotype:</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;<span class="s2">div</span> <span class="s3">class</span>=<span class="s4">"picker"</span> <span class="s3">id</span>=<span class="s4">"picker"</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">button</span> <span class="s3">class</span>=<span class="s4">"pickBtn"</span> <span class="s3">data-pheno</span>=<span class="s4">"A"</span> <span class="s3">type</span>=<span class="s4">"button"</span>&gt;A&lt;/<span class="s2">button</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">button</span> <span class="s3">class</span>=<span class="s4">"pickBtn"</span> <span class="s3">data-pheno</span>=<span class="s4">"B"</span> <span class="s3">type</span>=<span class="s4">"button"</span>&gt;B&lt;/<span class="s2">button</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">button</span> <span class="s3">class</span>=<span class="s4">"pickBtn"</span> <span class="s3">data-pheno</span>=<span class="s4">"AB"</span> <span class="s3">type</span>=<span class="s4">"button"</span>&gt;AB&lt;/<span class="s2">button</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;<span class="s2">button</span> <span class="s3">class</span>=<span class="s4">"pickBtn"</span> <span class="s3">data-pheno</span>=<span class="s4">"O"</span> <span class="s3">type</span>=<span class="s4">"button"</span>&gt;O&lt;/<span class="s2">button</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">          </span>&lt;</span><span class="s2">div</span><span class="s5"> </span><span class="s3">class</span><span class="s5">=</span>"mini"<span class="s5"> </span><span class="s3">style</span><span class="s5">=</span>"margin-top:10px;"<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">            </span>Current genotype: &lt;<span class="s2">code</span> <span class="s3">class</span>=<span class="s4">"inline"</span> <span class="s3">id</span>=<span class="s4">"genoRead"</span>&gt;___&lt;/<span class="s2">code</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/<span class="s2">section</span>&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/<span class="s2">div</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span>&lt;</span>footer<span class="s5">&gt;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>Science safety note: This game models the standard ABO genetics rules used in school science for learning dominance and co-dominance.</p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span>&lt;/</span>footer<span class="s5">&gt;</span></p>
+<p class="p5"><br></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span>&lt;</span>script<span class="s5">&gt;</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>// ---------- Genetics engine (keep this simple to avoid science mistakes) ----------</p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>// Internal allele codes:</p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>// IA = Iᴬ, IB = Iᴮ, i = i</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> genotypeToMarkers(a1, a2) {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> alleles = [a1, a2];</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> hasIA = alleles.includes(<span class="s4">"IA"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> hasIB = alleles.includes(<span class="s4">"IB"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">return</span> { <span class="s3">A</span>: hasIA, <span class="s3">B</span>: hasIB };</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> markersToPhenotype(markers) {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (markers.A &amp;&amp; markers.B) <span class="s1">return</span> <span class="s4">"AB"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (markers.A) <span class="s1">return</span> <span class="s4">"A"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (markers.B) <span class="s1">return</span> <span class="s4">"B"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">return</span> <span class="s4">"O"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> genotypeToPhenotype(a1, a2) {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">return</span> markersToPhenotype(genotypeToMarkers(a1, a2));</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> formatAllele(code) {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (code === <span class="s4">"IA"</span>) <span class="s1">return</span> <span class="s4">"Iᴬ"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (code === <span class="s4">"IB"</span>) <span class="s1">return</span> <span class="s4">"Iᴮ"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (code === <span class="s4">"i"</span>) <span class="s1">return</span> <span class="s4">"i"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">return</span> <span class="s4">"___"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> formatGenotype(a1, a2) {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (!a1 || !a2) <span class="s1">return</span> <span class="s4">"___"</span>;</p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">      </span></span>// Sort for consistent display: IA, IB, i</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> order = { <span class="s4">"IA"</span>: <span class="s3">0</span>, <span class="s4">"IB"</span>: <span class="s3">1</span>, <span class="s4">"i"</span>: <span class="s3">2</span> };</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> sorted = [a1, a2].sort((x, y) =&gt; order[x] - order[y]);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">return</span> formatAllele(sorted[<span class="s3">0</span>]) + formatAllele(sorted[<span class="s3">1</span>]);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>// ---------- UI state ----------</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> state = {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s3">slot1</span>: <span class="s6">null</span>,</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s3">slot2</span>: <span class="s6">null</span>,</p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">      </span></span>selectedPhenotype<span class="s5">: </span><span class="s6">null</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>};</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> slot1El = document.getElementById(<span class="s4">"slot1"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> slot2El = document.getElementById(<span class="s4">"slot2"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> slot1Val = document.getElementById(<span class="s4">"slot1Val"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> slot2Val = document.getElementById(<span class="s4">"slot2Val"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> feedbackEl = document.getElementById(<span class="s4">"feedback"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> genoReadEl = document.getElementById(<span class="s4">"genoRead"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> rbcStage = document.getElementById(<span class="s4">"rbcStage"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> picker = document.getElementById(<span class="s4">"picker"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> checkBtn = document.getElementById(<span class="s4">"checkBtn"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> resetBtn = document.getElementById(<span class="s4">"resetBtn"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">const</span> newBtn = document.getElementById(<span class="s4">"newBtn"</span>);</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> setFeedback(kind, text) {</p>
+<p class="p2"><span class="Apple-converted-space">      </span>feedbackEl.classList.remove(<span class="s4">"ok"</span>, <span class="s4">"bad"</span>, <span class="s4">"warn"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>feedbackEl.classList.add(kind);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>feedbackEl.textContent = text;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> clearMarkers() {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> markers = Array.from(rbcStage.querySelectorAll(<span class="s4">".marker"</span>));</p>
+<p class="p2"><span class="Apple-converted-space">      </span>markers.forEach(m =&gt; m.remove());</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> placeMarkers(markers) {</p>
+<p class="p2"><span class="Apple-converted-space">      </span>clearMarkers();</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">      </span></span>// Arrange markers around the RBC perimeter</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> positionsA = [</p>
+<p class="p2"><span class="Apple-converted-space">        </span>{<span class="s3">x</span>: <span class="s3">22</span>, <span class="s3">y</span>: <span class="s3">20</span>}, {<span class="s3">x</span>: <span class="s3">72</span>, <span class="s3">y</span>: <span class="s3">18</span>}, {<span class="s3">x</span>: <span class="s3">85</span>, <span class="s3">y</span>: <span class="s3">40</span>},</p>
+<p class="p2"><span class="Apple-converted-space">        </span>{<span class="s3">x</span>: <span class="s3">80</span>, <span class="s3">y</span>: <span class="s3">70</span>}, {<span class="s3">x</span>: <span class="s3">50</span>, <span class="s3">y</span>: <span class="s3">85</span>}, {<span class="s3">x</span>: <span class="s3">18</span>, <span class="s3">y</span>: <span class="s3">68</span>}</p>
+<p class="p2"><span class="Apple-converted-space">      </span>];</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> positionsB = [</p>
+<p class="p2"><span class="Apple-converted-space">        </span>{<span class="s3">x</span>: <span class="s3">30</span>, <span class="s3">y</span>: <span class="s3">30</span>}, {<span class="s3">x</span>: <span class="s3">60</span>, <span class="s3">y</span>: <span class="s3">16</span>}, {<span class="s3">x</span>: <span class="s3">88</span>, <span class="s3">y</span>: <span class="s3">55</span>},</p>
+<p class="p2"><span class="Apple-converted-space">        </span>{<span class="s3">x</span>: <span class="s3">70</span>, <span class="s3">y</span>: <span class="s3">82</span>}, {<span class="s3">x</span>: <span class="s3">38</span>, <span class="s3">y</span>: <span class="s3">86</span>}, {<span class="s3">x</span>: <span class="s3">14</span>, <span class="s3">y</span>: <span class="s3">48</span>}</p>
+<p class="p2"><span class="Apple-converted-space">      </span>];</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">function</span> addMarker(cls, pos) {</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1">const</span> m = document.createElement(<span class="s4">"div"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">        </span>m.className = <span class="s4">"marker "</span> + cls;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>m.style.left = pos.x + <span class="s4">"%"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>m.style.top = pos.y + <span class="s4">"%"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>rbcStage.appendChild(m);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>}</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">      </span></span>// If both A and B, show both sets (co-dominance visually)</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (markers.A) positionsA.forEach(p =&gt; addMarker(<span class="s4">"A"</span>, p));</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (markers.B) positionsB.forEach(p =&gt; addMarker(<span class="s4">"B"</span>, p));</p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">      </span></span>// If none, show nothing (O)</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> updateUI() {</p>
+<p class="p2"><span class="Apple-converted-space">      </span>slot1Val.textContent = formatAllele(state.slot1);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>slot2Val.textContent = formatAllele(state.slot2);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>genoReadEl.textContent = formatGenotype(state.slot1, state.slot2);</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (state.slot1 &amp;&amp; state.slot2) {</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1">const</span> markers = genotypeToMarkers(state.slot1, state.slot2);</p>
+<p class="p2"><span class="Apple-converted-space">        </span>placeMarkers(markers);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>} <span class="s1">else</span> {</p>
+<p class="p2"><span class="Apple-converted-space">        </span>clearMarkers();</p>
+<p class="p2"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> resetSelection() {</p>
+<p class="p2"><span class="Apple-converted-space">      </span>state.selectedPhenotype = <span class="s6">null</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>Array.from(picker.querySelectorAll(<span class="s4">".pickBtn"</span>)).forEach(btn =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">        </span>btn.classList.remove(<span class="s4">"selected"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>// ---------- Drag and drop ----------</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> onDragStart(e) {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> allele = e.target.getAttribute(<span class="s4">"data-allele"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>e.dataTransfer.setData(<span class="s4">"text/plain"</span>, allele);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>e.dataTransfer.effectAllowed = <span class="s4">"copy"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> onDragOver(e) {</p>
+<p class="p2"><span class="Apple-converted-space">      </span>e.preventDefault();</p>
+<p class="p2"><span class="Apple-converted-space">      </span>e.currentTarget.classList.add(<span class="s4">"dragover"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>e.dataTransfer.dropEffect = <span class="s4">"copy"</span>;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> onDragLeave(e) {</p>
+<p class="p2"><span class="Apple-converted-space">      </span>e.currentTarget.classList.remove(<span class="s4">"dragover"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> onDrop(e) {</p>
+<p class="p2"><span class="Apple-converted-space">      </span>e.preventDefault();</p>
+<p class="p2"><span class="Apple-converted-space">      </span>e.currentTarget.classList.remove(<span class="s4">"dragover"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> allele = e.dataTransfer.getData(<span class="s4">"text/plain"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> slotNum = e.currentTarget.getAttribute(<span class="s4">"data-slot"</span>);</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (![<span class="s4">"IA"</span>, <span class="s4">"IB"</span>, <span class="s4">"i"</span>].includes(allele)) {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span>setFeedback(</span>"bad"<span class="s5">, </span>"That allele is not valid. Use Iᴬ, Iᴮ, or i."<span class="s5">);</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1">return</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (slotNum === <span class="s4">"1"</span>) state.slot1 = allele;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (slotNum === <span class="s4">"2"</span>) state.slot2 = allele;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span>resetSelection();</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span>setFeedback(</span>"warn"<span class="s5">, </span>"Now choose the phenotype (A, B, AB, or O), then click Check answer."<span class="s5">);</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span>updateUI();</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span>Array.from(document.querySelectorAll(<span class="s4">".alleleCard"</span>)).forEach(card =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">      </span>card.addEventListener(<span class="s4">"dragstart"</span>, onDragStart);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>});</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span>[slot1El, slot2El].forEach(slot =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">      </span>slot.addEventListener(<span class="s4">"dragover"</span>, onDragOver);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>slot.addEventListener(<span class="s4">"dragleave"</span>, onDragLeave);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>slot.addEventListener(<span class="s4">"drop"</span>, onDrop);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>});</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>// ---------- Phenotype picker ----------</p>
+<p class="p2"><span class="Apple-converted-space">    </span>picker.addEventListener(<span class="s4">"click"</span>, (e) =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> btn = e.target.closest(<span class="s4">".pickBtn"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (!btn) <span class="s1">return</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> ph = btn.getAttribute(<span class="s4">"data-pheno"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">      </span>state.selectedPhenotype = ph;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>Array.from(picker.querySelectorAll(<span class="s4">".pickBtn"</span>)).forEach(b =&gt; b.classList.remove(<span class="s4">"selected"</span>));</p>
+<p class="p2"><span class="Apple-converted-space">      </span>btn.classList.add(<span class="s4">"selected"</span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>});</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>// ---------- Checking logic + feedback (specific, not vague) ----------</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> buildReason(a1, a2, correct) {</p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">      </span></span>// Provide short, accurate reasons based on genotype</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> sorted = [a1, a2].slice().sort((x,y) =&gt; ({<span class="s4">"IA"</span>:<span class="s3">0</span>,<span class="s4">"IB"</span>:<span class="s3">1</span>,<span class="s4">"i"</span>:<span class="s3">2</span>}[x]-{<span class="s4">"IA"</span>:<span class="s3">0</span>,<span class="s4">"IB"</span>:<span class="s3">1</span>,<span class="s4">"i"</span>:<span class="s3">2</span>}[y]));</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> g = formatGenotype(sorted[<span class="s3">0</span>], sorted[<span class="s3">1</span>]);</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (correct === <span class="s4">"AB"</span>) {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">return</span><span class="s5"> g + </span>" is AB because Iᴬ and Iᴮ are co-dominant, so both A and B markers appear."<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (correct === <span class="s4">"A"</span>) {</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1">if</span> (sorted.includes(<span class="s4">"IA"</span>) &amp;&amp; sorted.includes(<span class="s4">"i"</span>)) {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">          </span></span><span class="s1">return</span><span class="s5"> g + </span>" is A because Iᴬ dominates i, so A markers appear."<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">return</span><span class="s5"> g + </span>" is A because the genotype contains Iᴬ, so A markers appear."<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (correct === <span class="s4">"B"</span>) {</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1">if</span> (sorted.includes(<span class="s4">"IB"</span>) &amp;&amp; sorted.includes(<span class="s4">"i"</span>)) {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">          </span></span><span class="s1">return</span><span class="s5"> g + </span>" is B because Iᴮ dominates i, so B markers appear."<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">return</span><span class="s5"> g + </span>" is B because the genotype contains Iᴮ, so B markers appear."<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s7">// O</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span></span><span class="s1">return</span><span class="s5"> g + </span>" is O because ii produces no A or B markers."<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> checkAnswer() {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (!state.slot1 || !state.slot2) {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span>setFeedback(</span>"bad"<span class="s5">, </span>"You need two alleles. Drag one allele into each slot."<span class="s5">);</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1">return</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (!state.selectedPhenotype) {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span>setFeedback(</span>"bad"<span class="s5">, </span>"Choose a phenotype (A, B, AB, or O) before checking."<span class="s5">);</span></p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1">return</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> correct = genotypeToPhenotype(state.slot1, state.slot2);</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> chosen = state.selectedPhenotype;</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (chosen === correct) {</p>
+<p class="p2"><span class="Apple-converted-space">        </span>setFeedback(<span class="s4">"ok"</span>, <span class="s4">"Correct. "</span> + buildReason(state.slot1, state.slot2, correct));</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s1">return</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>}</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">      </span></span>// Wrong answer: give a precise correction and a targeted misconception fix</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> correctReason = buildReason(state.slot1, state.slot2, correct);</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">let</span> misconception = <span class="s4">""</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">if</span> (chosen === <span class="s4">"O"</span> &amp;&amp; correct !== <span class="s4">"O"</span>) {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span>misconception = </span>" O requires ii (two recessive alleles). Your genotype contains a dominant allele that produces a marker."<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span>} <span class="s1">else</span> <span class="s1">if</span> (chosen === <span class="s4">"AB"</span> &amp;&amp; correct !== <span class="s4">"AB"</span>) {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span>misconception = </span>" AB requires both Iᴬ and Iᴮ together."<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span>} <span class="s1">else</span> <span class="s1">if</span> ((chosen === <span class="s4">"A"</span> || chosen === <span class="s4">"B"</span>) &amp;&amp; correct === <span class="s4">"AB"</span>) {</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">        </span>misconception = </span>" Because both Iᴬ and Iᴮ are present, both markers appear (co-dominance)."<span class="s5">;</span></p>
+<p class="p2"><span class="Apple-converted-space">      </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">      </span>setFeedback(</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s4">"bad"</span>,</p>
+<p class="p2"><span class="Apple-converted-space">        </span><span class="s4">"Not correct. Correct phenotype is "</span> + correct + <span class="s4">". "</span> + correctReason + misconception</p>
+<p class="p2"><span class="Apple-converted-space">      </span>);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span>checkBtn.addEventListener(<span class="s4">"click"</span>, checkAnswer);</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span>resetBtn.addEventListener(<span class="s4">"click"</span>, () =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">      </span>state.slot1 = <span class="s6">null</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>state.slot2 = <span class="s6">null</span>;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>resetSelection();</p>
+<p class="p2"><span class="Apple-converted-space">      </span>updateUI();</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span>setFeedback(</span>"warn"<span class="s5">, </span>"Reset complete. Drag two alleles into the slots."<span class="s5">);</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>});</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>// New round: random genotype challenge (still within the rules)</p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>// This keeps it game-like and replayable.</p>
+<p class="p2"><span class="Apple-converted-space">    </span><span class="s1">function</span> randomGenotype() {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> alleles = [<span class="s4">"IA"</span>, <span class="s4">"IB"</span>, <span class="s4">"i"</span>];</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> a1 = alleles[Math.floor(Math.random() * alleles.length)];</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> a2 = alleles[Math.floor(Math.random() * alleles.length)];</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">return</span> [a1, a2];</p>
+<p class="p2"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span>newBtn.addEventListener(<span class="s4">"click"</span>, () =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">      </span><span class="s1">const</span> [a1, a2] = randomGenotype();</p>
+<p class="p2"><span class="Apple-converted-space">      </span>state.slot1 = a1;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>state.slot2 = a2;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>resetSelection();</p>
+<p class="p2"><span class="Apple-converted-space">      </span>updateUI();</p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">      </span>setFeedback(</span>"warn"<span class="s5">, </span>"New round loaded. Choose the phenotype, then click Check answer."<span class="s5">);</span></p>
+<p class="p2"><span class="Apple-converted-space">    </span>});</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span>// Initial render</p>
+<p class="p2"><span class="Apple-converted-space">    </span>updateUI();</p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">  </span>&lt;/</span>script<span class="s5">&gt;</span></p>
+<p class="p3"><span class="s5">&lt;/</span>body<span class="s5">&gt;</span></p>
+<p class="p3"><span class="s5">&lt;/</span>html<span class="s5">&gt;</span></p>
+</body>
+</html>
